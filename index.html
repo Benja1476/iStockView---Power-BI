@@ -84,6 +84,91 @@
     <ul>
       <li>ฝ่ายวางแผนคลังสินค้า (Inventory)</li>
       <li>ฝ่ายจัดซื้อ / จัดการวัสดุ (Procurement)</li>
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>iStockView - Power BI Inventory Template</title>
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      color: #333;
+      background-color: #fdfdfd;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    h1, h2 {
+      color: #0a3d62;
+      margin-top: 2rem;
+    }
+    ul {
+      padding-left: 1.5rem;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      margin: 1rem 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    .button {
+      display: inline-block;
+      background-color: #1e90ff;
+      color: #fff;
+      padding: 0.6rem 1.2rem;
+      margin-top: 1rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+    .button:hover {
+      background-color: #0a74da;
+    }
+    .footer {
+      text-align: center;
+      margin-top: 3rem;
+      font-size: 0.9rem;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>iStockView - Power BI Inventory Template</h1>
+    <p>
+      iStockView คือ Template สำหรับวิเคราะห์ทุนจมสินค้าในคลัง (Inventory) ด้วย Power BI ครอบคลุมการวิเคราะห์ ABC/FSN, Dead Stock, Turnover, DOI และคำแนะนำการเคลียร์ทุนจมอัตโนมัติผ่าน DAX
+    </p>
+
+    <h2>✅ คุณสมบัติเด่น</h2>
+    <ul>
+      <li>Dashboard Overview: สรุปทุนจม, turnover, และสินค้าควรเคลียร์</li>
+      <li>ABC + FSN Matrix: จัดกลุ่มสินค้าตามมูลค่าและความเคลื่อนไหว</li>
+      <li>Turnover / DOI Analysis: วิเคราะห์ความถี่การหมุนเวียนและวันที่ถือครอง</li>
+      <li>Dead/Slow Stock: รายการสินค้าที่ควรเคลียร์ ลดทุนจม</li>
+      <li>Action Summary: แสดงแผนเคลียร์ทุนจมแบบอัตโนมัติ</li>
+    </ul>
+
+    <h2>📊 DAX Logic ที่ใช้</h2>
+    <ul>
+      <li>DeadStockFlag: ระบุสินค้าที่ DOI เกิน 365 วัน</li>
+      <li>TurnoverCategory: แบ่งระดับหมุนเวียนของสินค้า</li>
+      <li>StockRecommendation: ให้คำแนะนำ เช่น "เคลียร์ด่วน", "ระบาย"</li>
+      <li>StuckCapital: มูลค่าทุนจมต่อสินค้า</li>
+    </ul>
+
+    <h2>🧩 เหมาะสำหรับใคร?</h2>
+    <ul>
+      <li>ฝ่ายวางแผนคลังสินค้า (Inventory)</li>
+      <li>ฝ่ายจัดซื้อ / จัดการวัสดุ (Procurement)</li>
       <li>ธุรกิจที่ต้องการลดทุนจมและ optimize stock</li>
     </ul>
 
@@ -96,15 +181,17 @@
     </ul>
 
     <h2>📸 ตัวอย่าง Dashboard</h2>
-    <img src="screenshot1.png" alt="Dashboard Overview" />
-    <img src="screenshot2.png" alt="ABC FSN Matrix" />
+    <img src="screenshot1.png" alt="Dashboard Overview">
+    <img src="screenshot2.png" alt="ABC FSN Matrix">
 
-    <a class="button" href="mailto:benjaja60@gmail.com?subject=ขอรายละเอียด%20iStockView&body=สวัสดีค่ะ%2C%20สนใจเทมเพลต%20iStockView%20อยากขอรายละเอียดเพิ่มเติมค่ะ">📨 ขอรายละเอียดทางอีเมล</a>
+    <a class="button" href="mailto:benjaja60@gmail.com?subject=ขอรายละเอียด%20iStockView&body=สวัสดีครับ%2Fค่ะ%2C%20สนใจเทมเพลต%20iStockView%20อยากขอรายละเอียดเพิ่มเติมครับ%2Fค่ะ">📨 ขอรายละเอียดทางอีเมล</a>
 
     <div class="footer">
       <p>📬 ติดต่อ: benjaja60@gmail.com</p>
       <p>© 2025 iStockView. All rights reserved.</p>
     </div>
   </div>
+
 </body>
 </html>
+
