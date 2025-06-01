@@ -1,132 +1,149 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>iStockView - Power BI Inventory Template</title>
   <style>
     body {
-      font-family: "Segoe UI", sans-serif;
       margin: 0;
-      padding: 0;
-      line-height: 1.7;
-      background-color: #f8f9fa;
-      color: #333;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9fafb;
+      color: #1f2937;
     }
-
-    header {
-      background-color: #006699;
-      color: white;
-      padding: 30px 20px;
-      text-align: center;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 32px;
-    }
-
     .container {
       max-width: 960px;
-      margin: 0 auto;
+      margin: auto;
       padding: 30px 20px;
     }
-
-    h2 {
-      background-color: #e6f2ff;
+    h1 {
+      color: #1e3a8a;
+      font-size: 2.2em;
+      margin-bottom: 10px;
+    }
+    .lead {
+      font-size: 1.1em;
+      margin-bottom: 30px;
+      color: #374151;
+    }
+    section {
+      margin-bottom: 40px;
+    }
+    section h2 {
+      background-color: #dbeafe;
+      color: #1d4ed8;
       padding: 10px 15px;
-      border-left: 5px solid #007acc;
-      margin-top: 40px;
-      font-size: 22px;
+      border-radius: 8px;
+      font-size: 1.3em;
+      margin-bottom: 15px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     }
-
-    ul {
-      margin: 0;
-      padding-left: 20px;
+    ul, ol {
+      margin-left: 20px;
     }
-
+    ul li, ol li {
+      margin-bottom: 6px;
+    }
     .gallery {
       display: flex;
       flex-wrap: wrap;
       gap: 20px;
-      justify-content: center;
-      margin-top: 30px;
     }
-
     .gallery img {
-      max-width: 100%;
-      height: auto;
+      flex: 1;
+      width: 100%;
+      max-width: 450px;
       border-radius: 10px;
-      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
     }
-
-    .footer {
+    .contact {
+      background-color: #f0f9ff;
+      padding: 20px;
+      border-radius: 8px;
+    }
+    .contact a {
+      color: #1d4ed8;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    footer {
       text-align: center;
-      padding: 30px;
-      font-size: 14px;
-      color: #777;
+      margin-top: 40px;
+      color: #6b7280;
+      font-size: 0.9em;
+    }
+    @media (max-width: 600px) {
+      .gallery {
+        flex-direction: column;
+        align-items: center;
+      }
     }
   </style>
 </head>
 <body>
-
-  <header>
-    <h1>iStockView - Power BI Inventory Template</h1>
-    <p>แดชบอร์ดวิเคราะห์ทุนจมสินค้าคงคลังอย่างมืออาชีพ</p>
-  </header>
-
   <div class="container">
-    <h2>📌 iStockView คืออะไร?</h2>
-    <p>
-      <strong>iStockView</strong> คือเทมเพลต Power BI สำหรับการวิเคราะห์ทุนจมสินค้าในคลัง (Inventory)
-      ช่วยให้คุณวางแผนเคลียร์ Dead Stock ลดต้นทุน และตัดสินใจด้วยข้อมูลแบบ Data-Driven
+    <h1>iStockView - Power BI Inventory Template</h1>
+    <p class="lead">
+      <strong>iStockView</strong> คือ Template สำหรับวิเคราะห์ทุนจมสินค้าในคลัง (Inventory) ด้วย Power BI  
+      ครอบคลุมการวิเคราะห์ ABC/FSN, Dead Stock, Turnover, DOI และคำแนะนำการเคลียร์ทุนจมอัตโนมัติผ่าน DAX
     </p>
 
-    <h2>✅ คุณสมบัติเด่น</h2>
-    <ul>
-      <li>Dashboard Overview: สรุปทุนจม, turnover, และสินค้าที่ควรเคลียร์</li>
-      <li>ABC + FSN Matrix: จัดกลุ่มสินค้าตามมูลค่าและความเคลื่อนไหว</li>
-      <li>Turnover / DOI Analysis: วิเคราะห์ความถี่การหมุนเวียนและวันที่ถือครอง</li>
-      <li>Dead/Slow Stock: รายการสินค้าที่ควรเคลียร์เพื่อลดทุนจม</li>
-      <li>Action Summary: แสดงแผนเคลียร์ทุนจมแบบอัตโนมัติ</li>
-    </ul>
+    <section>
+      <h2>✅ คุณสมบัติเด่น</h2>
+      <ul>
+        <li>Dashboard Overview: สรุปทุนจม, turnover, และสินค้าควรเคลียร์</li>
+        <li>ABC + FSN Matrix: จัดกลุ่มสินค้าตามมูลค่าและความเคลื่อนไหว</li>
+        <li>Turnover / DOI Analysis: วิเคราะห์ความถี่การหมุนเวียนและวันที่ถือครอง</li>
+        <li>Dead/Slow Stock: รายการสินค้าที่ควรเคลียร์ ลดทุนจม</li>
+        <li>Action Summary: แสดงแผนเคลียร์ทุนจมแบบอัตโนมัติ</li>
+      </ul>
+    </section>
 
-    <h2>📊 DAX Logic ที่ใช้</h2>
-    <ul>
-      <li><strong>DeadStockFlag:</strong> ระบุสินค้าที่ DOI เกิน 365 วัน</li>
-      <li><strong>TurnoverCategory:</strong> แบ่งระดับการหมุนเวียนของสินค้า</li>
-      <li><strong>StockRecommendation:</strong> ให้คำแนะนำ เช่น "เคลียร์ด่วน", "ระบาย"</li>
-      <li><strong>StuckCapital:</strong> แสดงมูลค่าทุนจมต่อสินค้า</li>
-    </ul>
+    <section>
+      <h2>📊 DAX Logic ที่ใช้</h2>
+      <ul>
+        <li><strong>DeadStockFlag:</strong> ระบุสินค้าที่ DOI เกิน 365 วัน</li>
+        <li><strong>TurnoverCategory:</strong> แบ่งระดับหมุนเวียนของสินค้า</li>
+        <li><strong>StockRecommendation:</strong> ให้คำแนะนำ เช่น "เคลียร์ด่วน", "ระบาย"</li>
+        <li><strong>StuckCapital:</strong> มูลค่าทุนจมต่อสินค้า</li>
+      </ul>
+    </section>
 
-    <h2>🧩 เหมาะสำหรับใคร?</h2>
-    <ul>
-      <li>ฝ่ายวางแผนคลังสินค้า (Inventory)</li>
-      <li>ฝ่ายจัดซื้อ / จัดการวัสดุ (Procurement)</li>
-      <li>ธุรกิจที่ต้องการลดทุนจมและ optimize stock</li>
-    </ul>
+    <section>
+      <h2>🧩 เหมาะสำหรับใคร?</h2>
+      <ul>
+        <li>ฝ่ายวางแผนคลังสินค้า (Inventory)</li>
+        <li>ฝ่ายจัดซื้อ / จัดการวัสดุ (Procurement)</li>
+        <li>ธุรกิจที่ต้องการลดทุนจมและ optimize stock</li>
+      </ul>
+    </section>
 
-    <h2>🚀 วิธีใช้งาน (สำหรับผู้ใช้ทั่วไป)</h2>
-    <ul>
-      <li>เปิดไฟล์ <strong>iStockView.pbix</strong> ด้วยโปรแกรม Power BI Desktop</li>
-      <li>นำเข้าข้อมูลสินค้าคงคลังจาก Excel หรือฐานข้อมูลของคุณ</li>
-      <li>Dashboard จะประมวลผลและแสดงผลการวิเคราะห์ให้อัตโนมัติ</li>
-      <li>พร้อมใช้งานเพื่อวางแผนลดทุนจมได้ทันที</li>
-    </ul>
+    <section>
+      <h2>🚀 วิธีใช้งาน (สำหรับผู้ใช้ทั่วไป)</h2>
+      <ol>
+        <li>เปิดไฟล์ <code>iStockView.pbix</code> ด้วยโปรแกรม Power BI Desktop</li>
+        <li>นำเข้าข้อมูลสินค้าคงคลังจาก Excel หรือฐานข้อมูลของคุณ</li>
+        <li>Dashboard จะประมวลผลและแสดงผลการวิเคราะห์ให้อัตโนมัติ</li>
+        <li>พร้อมใช้งานเพื่อวางแผนลดทุนจมได้ทันที</li>
+      </ol>
+    </section>
 
-    <h2>🖼️ ตัวอย่าง Dashboard</h2>
-    <div class="gallery">
-      <img src="screenshot1.png" alt="iStockView Screenshot 1" />
-      <img src="screenshot2.png" alt="iStockView Screenshot 2" />
-    </div>
+    <section>
+      <h2>📸 ตัวอย่าง Dashboard</h2>
+      <div class="gallery">
+        <img src="screenshot1.png" alt="Dashboard Overview">
+        <img src="screenshot2.png" alt="ABC FSN Matrix">
+      </div>
+    </section>
 
-    <h2>📬 ติดต่อ</h2>
-    <p>📧 Email: <strong>benjaja60@gmail.com</strong></p>
+    <section class="contact">
+      <h2>📬 ติดต่อ</h2>
+      <p>Email: <a href="mailto:benjaja60@gmail.com">benjaja60@gmail.com</a></p>
+    </section>
+
+    <footer>
+      © 2025 iStockView. All rights reserved.
+    </footer>
   </div>
-
-  <div class="footer">
-    © 2025 iStockView. All rights reserved.
-  </div>
-
 </body>
 </html>
