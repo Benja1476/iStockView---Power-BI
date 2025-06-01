@@ -183,6 +183,132 @@
         <li>เปิดไฟล์ <code>iStockView.pbix</code> ด้วยโปรแกรม Power BI Desktop</li>
         <li>นำเข้าข้อมูลสินค้าคงคลังจาก Excel หรือฐานข้อมูลของคุณ</li>
         <li>Dashboard จะประมวลผลและแสดงผลการวิเคราะห์ให้อัตโนมัติ</li>
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>iStockView - Power BI Inventory Template</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9fafb;
+      color: #1f2937;
+    }
+    .container {
+      max-width: 960px;
+      margin: auto;
+      padding: 30px 20px;
+    }
+    h1 {
+      color: #1e3a8a;
+      font-size: 2.2em;
+      margin-bottom: 10px;
+    }
+    .lead {
+      font-size: 1.1em;
+      margin-bottom: 30px;
+      color: #374151;
+    }
+    section {
+      margin-bottom: 40px;
+    }
+    section h2 {
+      background-color: #bfdbfe; /* เปลี่ยนสีพื้นหลังให้ชัด */
+      color: #1d4ed8;
+      padding: 10px 15px;
+      border-radius: 8px;
+      font-size: 1.3em;
+      margin-bottom: 15px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    ul, ol {
+      margin-left: 20px;
+    }
+    ul li, ol li {
+      margin-bottom: 6px;
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .gallery img {
+      flex: 1;
+      width: 100%;
+      max-width: 450px;
+      border-radius: 10px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    }
+    .contact {
+      background-color: #e0f2fe; /* สีพื้นอ่อนลง */
+      padding: 20px;
+      border-radius: 8px;
+    }
+    .contact a {
+      color: #1d4ed8;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      color: #6b7280;
+      font-size: 0.9em;
+    }
+    @media (max-width: 600px) {
+      .gallery {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>iStockView - Power BI Inventory Template</h1>
+    <p class="lead">
+      <strong>iStockView</strong> คือ Template สำหรับวิเคราะห์ทุนจมสินค้าในคลัง (Inventory) ด้วย Power BI  
+      ครอบคลุมการวิเคราะห์ ABC/FSN, Dead Stock, Turnover, DOI และคำแนะนำการเคลียร์ทุนจมอัตโนมัติผ่าน DAX
+    </p>
+
+    <section>
+      <h2>✅ คุณสมบัติเด่น</h2>
+      <ul>
+        <li>Dashboard Overview: สรุปทุนจม, turnover, และสินค้าควรเคลียร์</li>
+        <li>ABC + FSN Matrix: จัดกลุ่มสินค้าตามมูลค่าและความเคลื่อนไหว</li>
+        <li>Turnover / DOI Analysis: วิเคราะห์ความถี่การหมุนเวียนและวันที่ถือครอง</li>
+        <li>Dead/Slow Stock: รายการสินค้าที่ควรเคลียร์ ลดทุนจม</li>
+        <li>Action Summary: แสดงแผนเคลียร์ทุนจมแบบอัตโนมัติ</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>📊 DAX Logic ที่ใช้</h2>
+      <ul>
+        <li><strong>DeadStockFlag:</strong> ระบุสินค้าที่ DOI เกิน 365 วัน</li>
+        <li><strong>TurnoverCategory:</strong> แบ่งระดับหมุนเวียนของสินค้า</li>
+        <li><strong>StockRecommendation:</strong> ให้คำแนะนำ เช่น "เคลียร์ด่วน", "ระบาย"</li>
+        <li><strong>StuckCapital:</strong> มูลค่าทุนจมต่อสินค้า</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>🧩 เหมาะสำหรับใคร?</h2>
+      <ul>
+        <li>ฝ่ายวางแผนคลังสินค้า (Inventory)</li>
+        <li>ฝ่ายจัดซื้อ / จัดการวัสดุ (Procurement)</li>
+        <li>ธุรกิจที่ต้องการลดทุนจมและ optimize stock</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>🚀 วิธีใช้งาน (สำหรับผู้ใช้ทั่วไป)</h2>
+      <ol>
+        <li>เปิดไฟล์ <code>iStockView.pbix</code> ด้วยโปรแกรม Power BI Desktop</li>
+        <li>นำเข้าข้อมูลสินค้าคงคลังจาก Excel หรือฐานข้อมูลของคุณ</li>
+        <li>Dashboard จะประมวลผลและแสดงผลการวิเคราะห์ให้อัตโนมัติ</li>
         <li>พร้อมใช้งานเพื่อวางแผนลดทุนจมได้ทันที</li>
       </ol>
     </section>
@@ -198,7 +324,6 @@
     <section class="contact">
       <h2>📬 ติดต่อ</h2>
       <p>Email: <a href="mailto:benjaja60@gmail.com">benjaja60@gmail.com</a></p>
-      <a href="mailto:benjaja60@gmail.com?subject=สนใจ iStockView Power BI Template" class="email-button">ส่งเมลเพื่อขอข้อมูล</a>
     </section>
 
     <footer>
@@ -207,3 +332,4 @@
   </div>
 </body>
 </html>
+
