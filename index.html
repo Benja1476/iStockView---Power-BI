@@ -1,64 +1,106 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="iStockView - Power BI Template วิเคราะห์ทุนจมสินค้า (Inventory) พร้อม Dashboard ABC, FSN, Turnover, Dead Stock อย่างมืออาชีพ">
-  <meta name="keywords" content="Power BI, Inventory Dashboard, ABC Analysis, FSN, Dead Stock, Turnover, Template, วิเคราะห์ทุนจม, iStockView">
-  <meta name="author" content="iStockView Team">
-  <link rel="icon" href="favicon.ico" type="image/x-icon"/>
-  <title>iStockView - Power BI Inventory Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="iStockView – Power BI Inventory Template สำหรับวิเคราะห์ทุนจม, ABC, FSN, Dead Stock, Turnover และคำแนะนำอัตโนมัติ ด้วย DAX">
+  <meta name="author" content="Benjaja">
+  <meta name="keywords" content="Power BI, Inventory Template, Stock Analysis, ABC FSN, Dead Stock, DOI, Turnover">
+  <title>iStockView – Power BI Inventory Template</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; background: #f8f9fa; color: #333; }
-    header { background: #007bff; color: white; padding: 2rem 1rem; text-align: center; }
-    header h1 { margin: 0; font-size: 2.5rem; }
-    header p { font-size: 1.2rem; }
-    section { padding: 2rem 1rem; max-width: 960px; margin: auto; }
-    .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
-    .feature { background: white; padding: 1rem; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
-    .screenshots img { width: 100%; max-width: 100%; border-radius: 8px; margin-top: 1rem; }
-    footer { text-align: center; padding: 1rem; background: #e9ecef; font-size: 0.9rem; }
-    a.button { display: inline-block; margin-top: 1rem; padding: 0.75rem 1.5rem; background: #28a745; color: white; text-decoration: none; border-radius: 5px; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f8f9fa;
+      color: #333;
+    }
+    header {
+      background: #2b3035;
+      color: #fff;
+      padding: 30px 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    h2 {
+      color: #0056b3;
+      margin-top: 2rem;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    footer {
+      background: #e9ecef;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      font-size: 0.9rem;
+    }
+    .contact a {
+      color: #007bff;
+      text-decoration: none;
+    }
+    .contact a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
   <header>
     <h1>iStockView</h1>
-    <p>Power BI Template สำหรับวิเคราะห์ทุนจมสินค้าอย่างมืออาชีพ</p>
-    <a class="button" href="#contact">ติดต่อรับเทมเพลต</a>
+    <p>Power BI Inventory Template สำหรับลดทุนจมในคลังสินค้า</p>
   </header>
 
-  <section>
-    <h2>จุดเด่นของ Dashboard</h2>
-    <div class="features">
-      <div class="feature">
-        <h3>ABC / FSN Matrix</h3>
-        <p>แสดงภาพรวมมูลค่า + การเคลื่อนไหวสินค้าชัดเจน พร้อมคำแนะนำ</p>
-      </div>
-      <div class="feature">
-        <h3>Turnover & Dead Stock</h3>
-        <p>วิเคราะห์สินค้าที่ทุนจม, หมุนเวียนต่ำ และ Dead Stock ด้วย KPI ชัดเจน</p>
-      </div>
-      <div class="feature">
-        <h3>Action Summary</h3>
-        <p>เสนอแผนเคลียร์ทุนจมทันทีผ่าน DAX Logic อัจฉริยะ</p>
-      </div>
-    </div>
+  <div class="container">
+    <h2>✅ คุณสมบัติเด่น</h2>
+    <ul>
+      <li><strong>Dashboard Overview:</strong> สรุปทุนจม, turnover, และสินค้าควรเคลียร์</li>
+      <li><strong>ABC + FSN Matrix:</strong> จัดกลุ่มสินค้าตามมูลค่าและความเคลื่อนไหว</li>
+      <li><strong>Turnover / DOI Analysis:</strong> วิเคราะห์การหมุนเวียนและวันที่ถือครอง</li>
+      <li><strong>Dead/Slow Stock:</strong> รายการสินค้าที่ควรเคลียร์ ลดทุนจม</li>
+      <li><strong>Action Summary:</strong> แสดงแผนเคลียร์ทุนจมแบบอัตโนมัติ</li>
+    </ul>
 
-    <div class="screenshots">
-      <h2>ภาพตัวอย่าง Dashboard</h2>
-      <img src="screenshot1.png" alt="iStockView Screenshot 1" />
-      <img src="screenshot2.png" alt="iStockView Screenshot 2" />
-    </div>
-  </section>
+    <h2>📊 DAX Logic ที่ใช้</h2>
+    <ul>
+      <li><code>DeadStockFlag</code>: DOI > 365 วัน</li>
+      <li><code>TurnoverCategory</code>: จัดหมวดสินค้าตาม Turnover</li>
+      <li><code>StockRecommendation</code>: แนะนำ เช่น "เคลียร์ด่วน", "ระบาย"</li>
+      <li><code>StuckCapital</code>: คำนวณมูลค่าทุนจม</li>
+    </ul>
 
-  <section id="contact">
-    <h2>ติดต่อสอบถาม / ขอรับ Demo</h2>
-    <p>ส่งอีเมลหาเราได้ที่ <strong>benjaja60@gmail.com</strong></p>
-  </section>
+    <h2>🧩 เหมาะสำหรับ</h2>
+    <ul>
+      <li>ฝ่ายวางแผนคลังสินค้า (Inventory)</li>
+      <li>ฝ่ายจัดซื้อ / จัดการวัสดุ (Procurement)</li>
+      <li>ธุรกิจที่ต้องการลดทุนจมและ optimize stock</li>
+    </ul>
+
+    <h2>🚀 วิธีใช้งาน</h2>
+    <ol>
+      <li>เปิดไฟล์ <code>index.html</code> นี้เพื่อนำเสนอหน้า Landing Page</li>
+      <li>เปิดเทมเพลต <code>.pbix</code> (Power BI) ด้วย Power BI Desktop</li>
+      <li>เชื่อมต่อข้อมูลของคุณ แล้วใช้งาน Dashboard ทันที</li>
+    </ol>
+
+    <h2>📬 ติดต่อ</h2>
+    <p class="contact">
+      Email: <a href="mailto:benjaja60@gmail.com">benjaja60@gmail.com</a><br>
+      GitHub: <a href="https://github.com/benjaja60/istockview" target="_blank">https://github.com/benjaja60/istockview</a>
+    </p>
+  </div>
 
   <footer>
-    &copy; 2025 iStockView. All rights reserved.
+    © 2025 iStockView. All rights reserved.
   </footer>
 </body>
 </html>
